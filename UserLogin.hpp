@@ -31,10 +31,8 @@ public:
 
 };
 
-UserLogin::UserLogin() {
-}
+UserLogin::UserLogin() {}
 
-// COMPLETE THE FOLLOWING FUNCTIONS
 
 void UserLogin::readIn(const string& filename) {
 
@@ -85,19 +83,6 @@ size_t UserLogin::wordBucketIdMethod1(const string& userName) {
 
 }
 
-size_t UserLogin::wordBucketIdMethod2(const string& userName) {
-  size_t bucket_num = 0;
-  //loop through table and assign
-  for (auto & x: table) { //reference x initialized to each node of the table
-    //if key of node is equal to given username
-    if(userName == x.first){
-      //set bucket_num to the bucket # of where username is found
-      bucket_num = table.bucket(x.first);
-    }
-  }
-  return bucket_num;
-
-}
 
 bool UserLogin::validateUser(const string& userName) {
   //iterator to find key (username) in table
